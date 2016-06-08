@@ -1,0 +1,59 @@
+angular.module('acount',['ngRoute'])
+  .config(['$routeProvider',function($routeProvider){
+    $routeProvider
+      .when('/login',{
+        templateUrl:'templates/login.html',
+        controller:'loginCtrl'
+      })
+      .when('/register',{
+        templateUrl:'templates/reg.html',
+        controller:'registerCtrl'
+      })
+      .otherwise({
+        redirectTo:'/login'
+      })
+  }])
+  .controller('userCtrl',['$scope',function($scope){
+
+  }])
+  .controller('loginCtrl',['$rootScope','$scope',function($rootScope,$scope){
+    $rootScope.title='登录';
+    $scope.user={
+      name:'',
+      password:'',
+      yanzheng:''
+    };
+    $scope.submitLogin=function(valid){
+      if(valid){
+        console.log(valid);
+      }
+      console.log($scope.user);
+    }
+  }])
+  .controller('registerCtrl',['$rootScope','$scope','$interval',function($rootScope,$scope,$interval){
+    $rootScope.title='注册';
+    $scope.proving='获取验证码';
+    $scope.submitReg=function(valid){
+
+    }
+
+    $scope.getProveBtn=false;
+    $scope.getProving=function(){
+      if($scope.getProveBtn){
+        return;
+      }
+      $scope.getProveBtn=true;
+      var time=60;
+      $scope.proving=time+'秒后获取';
+      var intervalId=$interval(function(){
+        if(time>1){
+          time--;
+          $scope.proving=time+'秒后获取';
+        }else{
+          $interval.cancel(intervalId);
+          $scope.getProveBtn=false;
+          $scope.proving='获取验证码';
+        }
+      },1000)
+    }
+  }])

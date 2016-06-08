@@ -1,0 +1,32 @@
+*{
+    font-family: '微软雅黑';
+}
+body{
+    background-color:ghostwhite;
+}
+
+.remove-radius{
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+a:hover{
+    text-decoration:none;
+}
+
+a.mouse-on:hover{
+    color: white;
+}
+.nav-hover:hover{
+    background-color:gainsboro;
+}
+
+.prodict{
+    height: 118px;
+    cursor: pointer;
+    background: white;
+    transition:background 0.5s ease-in;
+}
+.prodict:hover{
+    background: ghostwhite;
+}

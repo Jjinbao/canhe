@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="acount">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title ng-bind="title+'-专注于外卖餐盒订购供应的网站'"></title>
+  <link rel="stylesheet" href="lib/bootstrap/3.3.6/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/pace-theme-minimal.css" >
+  <link rel="stylesheet" href="css/style.css"/>
+
+</head>
+<body ng-controller="userCtrl">
+<div class="container">
+  <div class="col-sm-offset-1 col-sm-10" style="margin-top: 18px;">
+    <a href="#">
+      <span class="text-primary" style="font-size: 30px;">icanhe.com | 爱餐盒</span>
+    </a>
+
+  </div>
+</div>
+<section style="margin-top: 60px;">
+  <ng-view></ng-view>
+</section>
+<footer class="text-center">
+  <p>我要开店 | 联系我们 | 服务条款和协议 | 加入我们</p>
+  <p>增值电信业务许可证 : 沪B2-20150033 | 沪ICP备 09007032 | 上海工商行政管理 Copyright ©2008-2015 ele.me, All Rights Reserved.</p>
+</footer>
+
+<script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="lib/angular/1.5.3/angular.min.js"></script>
+<script src="lib/angular/1.5.3/angular-resource.min.js"></script>
+<script src="lib/angular/1.5.3/angular-route.min.js"></script>
+<script src="js/acount-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<div class="container">
+  <div class="col-sm-offset-1 col-sm-5" style="padding-top: 60px">
+    <div>
+      <div class="text-center" style="margin-top: 10px;">
+        <img src="img/weixin.png" width="200px">
+      </div>
+      <div class="text-center" style="margin-top: 10px;">
+        <p style="font-size: 12px;">扫描上方二维码，关注微信公众号，订货更方便！</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-5" style="padding: 20px 30px 20px 30px;">
+    <div class="panel panel-default remove-radius">
+      <div class="panel-body" style="padding: 25px;">
+        <div class="col-sm-10 text-right">
+          <a href="#">
+            手机短信登录
+            <span class="glyphicon glyphicon-phone"></span>
+          </a>
+        </div>
+        <form name="login" class="form-horizontal" ng-submit="submitLogin(login.$valid)" style="margin-top: 40px;" novalidate>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-1">
+              <span class="glyphicon glyphicon-user" style="font-size: 20px;padding-top: 4px;"></span>
+            </div>
+            <div class="col-sm-8">
+              <input type="name" class="form-control remove-radius" ng-minlength="11" ng-maxlength="11" ng-model="user.name" placeholder="用户名/手机号/邮箱" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-1 col-sm-1">
+              <span class="glyphicon glyphicon-lock" style="font-size: 20px;padding-top: 4px;"></span>
+            </div>
+            <div class="col-sm-8">
+              <input type="password" class="form-control remove-radius" ng-minlength="8" ng-maxlength="12" ng-model="user.password" placeholder="密码" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+              <input type="text" class="form-control remove-radius" placeholder="验证码" required>
+            </div>
+            <div class="col-sm-2">
+              <img src="img/yanzheng.png">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">记住密码
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+              <button type="submit" ng-disabled="login.$invalid" class="btn btn-default btn-primary btn-block">登录餐盒</button>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-4">
+              <a href="#/register">新用户注册</a>
+            </div>
+            <div class="col-sm-4 text-right">
+              <a href="#forgot">忘记密码</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
