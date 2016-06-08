@@ -5,6 +5,9 @@ body{
     background-color:ghostwhite;
 }
 
+.logo-color{
+    color: #00B7FF;
+}
 .remove-radius{
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -30,3 +33,42 @@ a.mouse-on:hover{
 .prodict:hover{
     background: ghostwhite;
 }
+
+/*order center*/
+.orders{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.orders .col-sm-2{
+    padding-right: 0;
+    padding-left: 15px;
+}
+
+.orders .col-sm-10{
+    padding-right: 0;
+    padding-left: 0;
+}
+.orders li{
+    padding-top: 10px;
+    list-style-type: none;
+}
+
+.orders ul{
+    padding: 0 10px 0 0;
+}
+
+.orders a{
+    text-decoration:none;
+    color: black;
+}
+
+.item-color{
+    color: #00B7FF;
+}
+
+.orders span:hover{
+    cursor:pointer;
+    color: #00B7FF;
+}
+/*end ordercenter*/

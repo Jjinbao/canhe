@@ -16,8 +16,9 @@ angular.module('acount',['ngRoute'])
   .controller('userCtrl',['$scope',function($scope){
 
   }])
-  .controller('loginCtrl',['$rootScope','$scope',function($rootScope,$scope){
+  .controller('loginCtrl',['$rootScope','$scope','$interval',function($rootScope,$scope,$interval){
     $rootScope.title='登录';
+    $scope.proving='获取验证码';
     $scope.user={
       name:'',
       password:'',
@@ -29,6 +30,52 @@ angular.module('acount',['ngRoute'])
       }
       console.log($scope.user);
     }
+
+    //修改登录方式
+    $scope.loginMethod=true;
+    $scope.loginType=function(){
+      if($scope.loginMethod){
+        $scope.loginMethod=false;
+      }else{
+        $scope.loginMethod=true;
+      }
+      console.log($scope.loginMethod);
+    }
+
+    //获取验证码时间限制，限制一分钟后再获取验证码
+    $scope.getProveBtn=false;
+    var intervalId;
+    $scope.getProving=function(){
+      if($scope.getProveBtn){
+        return;
+      }
+      $scope.getProveBtn=true;
+      var time=120;
+      $scope.proving=time+'秒后获取';
+      intervalId=$interval(function(){
+        if(time>1){
+          time--;
+          console.log(time);
+          $scope.proving=time+'秒后获取';
+        }else{
+          $interval.cancel(intervalId);
+          $scope.getProveBtn=false;
+          $scope.proving='获取验证码';
+        }
+      },1000);
+      $scope.$on('$destroy',function(){
+        console.log('这里是要准备清除的');
+        if(intervalId){
+          console.log('这里是一出函数');
+          $interval.cancel(intervalId);
+        }
+      })
+    }
+    $scope.$on('$destory',function(){
+      if(intervalId){
+        $interval.cancel(intervalId);
+      }
+    })
   }])
   .controller('registerCtrl',['$rootScope','$scope','$interval',function($rootScope,$scope,$interval){
     $rootScope.title='注册';
@@ -37,15 +84,17 @@ angular.module('acount',['ngRoute'])
 
     }
 
+    //获取验证码限制，限制2分钟后才能再次获取验证码
     $scope.getProveBtn=false;
+    var intervalId
     $scope.getProving=function(){
       if($scope.getProveBtn){
         return;
       }
       $scope.getProveBtn=true;
-      var time=60;
+      var time=120;
       $scope.proving=time+'秒后获取';
-      var intervalId=$interval(function(){
+      intervalId=$interval(function(){
         if(time>1){
           time--;
           $scope.proving=time+'秒后获取';
@@ -54,6 +103,12 @@ angular.module('acount',['ngRoute'])
           $scope.getProveBtn=false;
           $scope.proving='获取验证码';
         }
-      },1000)
+      },1000);
+      //清除获取验证码的倒计时函数
+      $scope.$on('$destroy',function(){
+        if(intervalId){
+          $interval.cancel(intervalId);
+        }
+      })
     }
   }])

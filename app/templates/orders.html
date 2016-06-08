@@ -1,7 +1,146 @@
-<div class="container">
-  <div class="panel panel-default remove-radius">
-    <div class="panel-body">
-      我的订单
+<div class="container orders">
+  <div class="col-sm-2">
+    <ul>
+      <li ng-click="orderItems('profile')" ng-class="{true:'item-color'}[nowOrderItem=='profile']">
+        <h4>
+          <span>个人中心</span>
+        </h4>
+      </li>
+      <li ng-click="orderItems('collection')" ng-class="{true:'item-color'}[nowOrderItem=='collection']">
+        <h4>
+          <span>我的收藏</span>
+        </h4>
+      </li>
+      <li>
+        <h4>
+          我的订单
+        </h4>
+        <ul style="padding-left: 20px;">
+          <li ng-click="orderItems('lastOrder')" ng-class="{true:'item-color'}[nowOrderItem=='lastOrder']">
+            <span>最近一个月订单</span>
+          </li>
+          <li ng-click="orderItems('allOrder')" ng-class="{true:'item-color'}[nowOrderItem=='allOrder']">
+            <span>全部订单</span>
+          </li>
+          <li ng-click="orderItems('chargeBack')" ng-class="{true:'item-color'}[nowOrderItem=='chargeBack']">
+            <span>退单记录</span>
+          </li>
+        </ul>
+      </li>
+      <!--<li>
+        <h4>
+          我的资产
+        </h4>
+        <ul style="padding-left: 20px;">
+          <li ng-click="orderItems('redbags')" ng-class="{true:'item-color'}[nowOrderItem=='redbags']">
+            <span>我的红包</span>
+          </li>
+          <li ng-click="orderItems('balance')" ng-class="{true:'item-color'}[nowOrderItem=='balance']">
+            <span>账户余额</span>
+          </li>
+          <li ng-click="orderItems('integration')" ng-class="{true:'item-color'}[nowOrderItem=='integration']">
+            <span>我的积分</span>
+          </li>
+        </ul>
+      </li>-->
+      <li>
+        <h4>
+          我的资料
+        </h4>
+        <ul style="padding-left: 20px;">
+          <li ng-click="orderItems('personal')" ng-class="{true:'item-color'}[nowOrderItem=='personal']">
+            <span>个人资料</span>
+          </li>
+          <li ng-click="orderItems('address')" ng-class="{true:'item-color'}[nowOrderItem=='address']">
+            <span>地址管理</span>
+          </li>
+          <li ng-click="orderItems('security')" ng-class="{true:'item-color'}[nowOrderItem=='security']">
+            <span>安全中心</span>
+          </li>
+          <li ng-click="orderItems('password')" ng-class="{true:'item-color'}[nowOrderItem=='password']">
+            <span>修改密码</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="col-sm-10">
+    <div ng-show="nowOrderItem==='profile'">
+      <div class="panel panel-default remove-radius">
+        <div class="panel-body">
+          个人中心
+          <br><br><br><br><br><br>
+        </div>
+      </div>
+    </div>
+    <div ng-switch="nowOrderItem">
+      <div class="panel panel-default remove-radius">
+        <div class="panel-body">
+          <div ng-switch-when="lastOrder">
+            <h4>最近一个月订单</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="allOrder">
+            <h4>全部订单</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="chargeBack">
+            <h4>退单记录</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="redbags">
+            <h4>我的红包</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="balance">
+            <h4>账户余额</h4>
+            <hr>
+          </div>
+          <div ng-switch-when="integration">
+            <h4>我的积分</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="personal">
+            <h4>个人资料</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="address">
+            <h4>地址管理</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="security">
+            <h4>安全中心</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="password">
+            <h4>密码管理</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-when="collection">
+            <h4>我的收藏</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+          <div ng-switch-default>
+            <h4>未完成订单</h4>
+            <hr>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
+
+
 </div>

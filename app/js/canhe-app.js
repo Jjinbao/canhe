@@ -16,7 +16,8 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
         templateUrl:'templates/prodect.html'
       })
       .when('/order',{
-        templateUrl:'templates/orders.html'
+        templateUrl:'templates/orders.html',
+        controller:'orderCtrl'
       })
       .when('/about',{
         templateUrl:'templates/about.html'
