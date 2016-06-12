@@ -19,11 +19,22 @@ angular.module('canhe.controllers', ['ngNumberPicker'])
     }
   }])
   .controller('productCtrl',['$scope',function($scope){
-    $scope.input = {num: 0};
-    $scope.getNumber = function() {
-      alert('The number is: [' + $scope.input.num + ']');
-    };
-    $scope.onChange = function() {
-      console.log('number changed', $scope.input.num);
-    };
+    $scope.orderBox = {number: 1};
+    $scope.nowPrice=120;
+    $scope.$watchCollection('orderBox',function(newValue){
+      if(newValue&&newValue.number===0){
+        $scope.nowPrice=0;
+        return;
+      }
+      if(newValue && newValue.number<5){
+        $scope.nowPrice=120;
+        console.log('120');
+      }else if(newValue&&newValue.number>=10){
+        $scope.nowPrice=115;
+        console.log('115');
+      } else{
+        $scope.nowPrice=118;
+        console.log('118');
+      }
+    })
   }])

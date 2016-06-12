@@ -10,23 +10,23 @@
 
           </div>
         </div>
-        <div class="col-sm-2 text-center" style="color: orangered">
-          <h3>1-5箱</h3>
+        <div class="col-sm-2 text-center" ng-class="{true:'order-price'}[(orderBox.number<5&&orderBox.number>0)]">
+          <h3>1-4箱</h3>
           <p>￥120元/箱</p>
         </div>
-        <div class="col-sm-2 text-center" style="color: orangered">
-          <h3>6-10箱</h3>
+        <div class="col-sm-2 text-center" ng-class="{true:'order-price'}[(orderBox.number>=5&&orderBox.number<10)]">
+          <h3>5-9箱</h3>
           <p>￥118元/箱</p>
         </div>
-        <div class="col-sm-2 text-center" style="color: orangered">
-          <h3>>10箱</h3>
+        <div class="col-sm-2 text-center" ng-class="{true:'order-price'}[orderBox.number>=10]">
+          <h3>>=10箱</h3>
           <p>￥115元/箱</p>
         </div>
         <div class="col-sm-3">
           <div class="col-sm-12">
             订购数量
-            <h-number style="width: 50px;" value="input.num" unit-position="left" min="0" max="200"  step="1" change="onChange()"></h-number>
-            {{input.num}}
+            <h-number style="width: 50px;" value="orderBox.number" min="0" max="1000"  step="1" change="onChange()"></h-number>
+            {{orderBox.number*nowPrice}}
           </div>
           <div class="col-sm-6">
             <a class="btn btn-block" style="background-color: orangered;color: white;">去结算</a>
