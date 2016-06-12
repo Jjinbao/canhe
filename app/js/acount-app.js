@@ -26,9 +26,8 @@ angular.module('acount',['ngRoute'])
     };
     $scope.submitLogin=function(valid){
       if(valid){
-        console.log(valid);
+
       }
-      console.log($scope.user);
     }
 
     //修改登录方式
@@ -55,7 +54,6 @@ angular.module('acount',['ngRoute'])
       intervalId=$interval(function(){
         if(time>1){
           time--;
-          console.log(time);
           $scope.proving=time+'秒后获取';
         }else{
           $interval.cancel(intervalId);
@@ -64,9 +62,7 @@ angular.module('acount',['ngRoute'])
         }
       },1000);
       $scope.$on('$destroy',function(){
-        console.log('这里是要准备清除的');
         if(intervalId){
-          console.log('这里是一出函数');
           $interval.cancel(intervalId);
         }
       })

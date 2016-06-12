@@ -13,7 +13,8 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
         controller:'listCtrl'
       })
       .when('/list/prodect',{
-        templateUrl:'templates/prodect.html'
+        templateUrl:'../templates/product.html',
+        controller:'productCtrl'
       })
       .when('/order',{
         templateUrl:'templates/orders.html',
@@ -21,6 +22,9 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
       })
       .when('/about',{
         templateUrl:'templates/about.html'
+      })
+      .when('/custom',{
+        templateUrl:'templates/custom.html'
       })
       .when('/login',{
         templateUrl:'templates/login.html'
@@ -34,13 +38,24 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
   }])
 .controller('myCtrl',['$scope','$location','dataService',function($scope,$location,dataService){
     $scope.title='login';
+    $scope.barName='home';
     $scope.list_data=dataService.data;
     dataService.res('jiames');
     $scope.$watchCollection('list_data',function(newVal){
       console.log(newVal);
     });
     $scope.detailProdect = function () {
+      $scope.barName='';
       $location.path('/list/prodect');
     }
+    var urlStr=$location.path().substring(1);
+    if(urlStr){
+      $scope.barName=urlStr;
+    }
 
+    $scope.clickBar=function(value){
+      if(value!=$scope.barName){
+        $scope.barName=value;
+      }
+    }
   }])

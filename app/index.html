@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
   <meta charset="UTF-8">
-  <title>爱餐盒-专注于外卖餐盒订购供应的网站</title>
+  <title>爱餐盒-致力于为外卖包装提供一站式解决方案</title>
   <link href="css/pace-theme-minimal.css" rel="stylesheet">
   <link rel="stylesheet" href="lib/bootstrap/3.3.6/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="css/style.css"/>
@@ -18,16 +18,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a ng-href="#/" class="navbar-brand">
+      <a ng-href="#/" ng-click="clickBar('home')" class="navbar-brand">
         <p class="logo-color">爱餐盒</p>
       </a>
     </div>
     <div class="collapse navbar-collapse" id="canhe-navbar-collapse">
       <ul class="nav navbar-nav" style="margin-left: 60px;">
-        <li class="active"><a href="#/">首页</a></li>
-        <li class="nav-hover"><a ng-href="#/list">产品</a></li>
-        <li class="nav-hover"><a ng-href="#/order">我的订单</a></li>
-        <li class="nav-hover"><a ng-href="#/about">关于我们</a></li>
+        <li class="nav-hover" ng-class="{true:'active'}[barName=='home']" ng-click="clickBar('home')"><a href="#/">首页</a></li>
+        <li class="nav-hover" ng-class="{true:'active'}[barName=='list']" ng-click="clickBar('list')"><a ng-href="#/list">餐盒产品</a></li>
+        <li class="nav-hover" ng-class="{true:'active'}[barName=='custom']" ng-click="clickBar('custom')"><a ng-href="#/custom">产品定制</a></li>
+        <li class="nav-hover" ng-class="{true:'active'}[barName=='order']" ng-click="clickBar('order')"><a ng-href="#/order">我的订单</a></li>
+        <li class="nav-hover" ng-class="{true:'active'}[barName=='about']" ng-click="clickBar('about')"><a ng-href="#/about">关于我们</a></li>
       </ul>
       <a class="btn btn-link navbar-btn btn-sm navbar-right" style="margin-right: 10px;" target="_blank" href="acount.html#register">注册</a>
       <a class="btn btn-link navbar-btn btn-sm navbar-right" target="_blank" href="acount.html#/login">登录</a>
@@ -48,6 +49,7 @@
 <script src="lib/ui-bootstrap/ui-bootstrap-tpls-1.3.2.min.js"></script>
 <script src="lib/angular/1.5.3/angular-resource.min.js"></script>
 <script src="lib/angular/1.5.3/angular-route.min.js"></script>
+<script src="lib/angular/angular-number-picker.min.js"></script>
 <script src="js/canhe-product-utils.js"></script>
 <script src="js/canhe-service.js"></script>
 <script src="js/canhe-controller.js"></script>

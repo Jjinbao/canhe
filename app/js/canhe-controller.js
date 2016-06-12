@@ -1,4 +1,4 @@
-angular.module('canhe.controllers', [])
+angular.module('canhe.controllers', ['ngNumberPicker'])
   .controller('homeCtrl', ['$scope', '$location', function ($scope, $location) {
     $scope.myInterval = 3000;
     $scope.myImg = 'img/logo.png';
@@ -17,4 +17,13 @@ angular.module('canhe.controllers', [])
         $scope.nowOrderItem=value;
       }
     }
+  }])
+  .controller('productCtrl',['$scope',function($scope){
+    $scope.input = {num: 0};
+    $scope.getNumber = function() {
+      alert('The number is: [' + $scope.input.num + ']');
+    };
+    $scope.onChange = function() {
+      console.log('number changed', $scope.input.num);
+    };
   }])

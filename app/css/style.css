@@ -5,6 +5,10 @@ body{
     background-color:ghostwhite;
 }
 
+nav .collapse a{
+    text-decoration: none;
+}
+
 .logo-color{
     color: #00B7FF;
 }
@@ -72,3 +76,39 @@ a.mouse-on:hover{
     color: #00B7FF;
 }
 /*end ordercenter*/
+
+/*number picker*/
+.input-group{
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span[disabled]
+{
+    pointer-events: none;
+    cursor: default;
+    background-color: #eee;
+    opacity: 1;
+}
+
+.input-group-addon.active{
+    color: #fff;
+    background-color: #007aff;
+}
+
+.picker-unit-left{
+    margin-right: 10px;
+}
+
+.picker-unit-right{
+    margin-left: 10px;
+}
+
+.picker-unit-style{
+    cursor: pointer;
+    color: white;
+    background-color: orangered;
+    font-size: large;
+}
+/*end number picker*/
