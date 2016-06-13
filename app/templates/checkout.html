@@ -1,0 +1,138 @@
+<div style="margin-top: -80px;">
+  <div class="checkout-header">
+    <div style="border-bottom: 1px solid #027ecb">
+      <div class="container text-right">
+        <h5>18210596067</h5>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-4">
+        <h2>爱餐盒&nbsp;|&nbsp;订单信息</h2>
+        <br>
+      </div>
+      <div class="col-sm-8 text-center">
+        <div class="col-sm-3"  style="color: yellow;">
+          <div>
+          <h3>1</h3>
+          <h4>选择商品</h4>
+          </div>
+        </div>
+        <div class="col-sm-1" style="color: yellow">
+          <h2>></h2>
+        </div>
+        <div class="col-sm-3" style="color: yellow">
+          <h3>2</h3>
+          <h4>确认订单信息</h4>
+        </div>
+        <div class="col-sm-1">
+          <h2>></h2>
+        </div>
+        <div class="col-sm-3">
+          <h3>3</h3>
+          <h4>成功提交订单</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container margin-top-15">
+  <div class="col-sm-4" style="padding-right: 0">
+    <div class="panel panel-default remove-radius">
+      <div class="panel-body">
+        <h4>订单详情(购物车)</h4>
+        <hr>
+        <div class="row">
+          <div class="col-sm-5">
+            <span style="color: darkgray">商品</span>
+          </div>
+          <div class="col-sm-4 text-center">
+            <span style="color: darkgray">数量</span>
+          </div>
+          <div class="col-sm-3"  style="padding-left: 0;">
+            <span style="color: darkgray">小计(￥)</span>
+          </div>
+          <br>
+            <div class="row" style="margin: 30px 0 0 0;" ng-repeat="order in orderDetail">
+              <div class="col-sm-5" style="padding-right: 0;">
+                <span>{{order.productName}}</span>
+              </div>
+              <div class="col-sm-4 text-center"  style="padding-left: 0;">
+                {{order.orderNumber}}
+                <!--<h-number style="width: 50px;" value="order.orderNumber" min="0" max="1000"  step="1"></h-number>-->
+              </div>
+              <div class="col-sm-3" style="padding-left: 0;">
+                <span>{{order.orderNumber*order.unitPrice|currency:'￥'}}</span>
+              </div>
+            </div>
+        </div>
+        <hr>
+        <div class="col-sm-12 text-right">
+          <span style="font-size: 30px;color: red">{{price|currency:'￥'}}</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-8" style="padding-right: 0">
+    <div class="panel panel-default remove-radius">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-12">
+            <h4>收获地址</h4>
+            <div class="checkout-address" ng-click="addAddress()">
+              <span>+ 添加收货地址</span>
+            </div>
+          </div>
+        </div>
+        <div class="row margin-top-30">
+          <div class="col-sm-12">
+            <h4>付款方式</h4>
+            <span class="checkout-method-tip">推荐使用在线付款，不用找零，双倍积分更优惠（积分可以抵现哟）.</span>
+          </div>
+        </div>
+
+        <div class="row margin-top-20">
+          <div class="col-sm-6">
+           <div class="checkout-method-choice" ng-class="{true:'active-checkout-way'}[checkoutMode==='online']" ng-click="checkoutWay('online')">
+             <h4>在线支付</h4>
+             <span class="checkout-method-tip">支持微信，支付宝支付</span><span class="glyphicon glyphicon-ok checkout-way-style" ng-show="checkoutMode=='online'"></span>
+           </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="checkout-method-choice" ng-class="{true:'active-checkout-way'}[checkoutMode==='offline']" ng-click="checkoutWay('offline')">
+              <h4>货到付款</h4>
+              <span class="checkout-method-tip">送货上门再付款</span><span class="glyphicon glyphicon-ok checkout-way-style" ng-show="checkoutMode=='offline'"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row margin-top-30">
+          <div class="col-sm-12">
+            <h4>其他信息</h4>
+            <div class="col-sm-2">
+              <h5>配送方式</h5>
+            </div>
+            <div class="col-sm-10">
+              <h5>本订单由爱餐盒官网送货上门并提供售后服务。</h5>
+            </div>
+            <div class="col-sm-2">
+              <h5>送达时间</h5>
+            </div>
+            <div class="col-sm-10">
+              <h5> 次日达,如果需要加急请联系服务电话，我们会争取当日送达。</h5>
+            </div>
+          </div>
+        </div>
+        <div class="row margin-top-30">
+          <div class="col-sm-12">
+            <a class="btn btn-lg commit-btn">
+              确认下单
+            </a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#/list" class="btn btn-default btn-lg" style="background-color: orange;">
+              还要采购
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,16 @@
  * Created by Administrator on 2016/6/2.
  */
 angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.directives'])
+  .run(['$rootScope','$location',function($rootScope,$location){
+    $rootScope.navBarHide=false;
+    $rootScope.$on('$routeChangeStart', function() {
+      if($location.path().toString()==='/cart/checkout'){
+        $rootScope.navBarHide=true;
+      }else{
+        $rootScope.navBarHide=false;
+      }
+    });
+  }])
   .config(['$routeProvider',function($routeProvider){
     $routeProvider
       .when('/',{
@@ -12,9 +22,13 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
         templateUrl:'templates/list.html',
         controller:'listCtrl'
       })
-      .when('/list/prodect',{
-        templateUrl:'../templates/product.html',
+      .when('/list/product/3027',{
+        templateUrl:'templates/product.html',
         controller:'productCtrl'
+      })
+      .when('/cart/checkout',{
+        templateUrl:'templates/checkout.html',
+        controller:'checkoutCtrl'
       })
       .when('/order',{
         templateUrl:'templates/orders.html',
@@ -36,7 +50,7 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
         redirectTo:'/'
       })
   }])
-.controller('myCtrl',['$scope','$location','dataService',function($scope,$location,dataService){
+.controller('myCtrl',['$rootScope','$scope','$location','dataService',function($rootScope,$scope,$location,dataService){
     $scope.title='login';
     $scope.barName='home';
     $scope.list_data=dataService.data;
@@ -46,7 +60,7 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
     });
     $scope.detailProdect = function () {
       $scope.barName='';
-      $location.path('/list/prodect');
+      $location.path('/list/product/3027');
     }
     var urlStr=$location.path().substring(1);
     if(urlStr){
@@ -58,4 +72,8 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
         $scope.barName=value;
       }
     }
+
+    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState){
+        console.log('root start changed');
+    })
   }])

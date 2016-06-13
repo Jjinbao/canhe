@@ -1,11 +1,14 @@
 angular.module('canhe.service',['ngResource'])
 .service('dataService',['$resource',function($resource){
-    var data={}
+    var data={};
+    var cart={}
     return {
       data:data,
       res:function(uuid){
         return request_show_data(uuid);
-      }
+      },
+      cart:{},
+
     }
 
     function request_show_data(uuid){
@@ -16,4 +19,7 @@ angular.module('canhe.service',['ngResource'])
           }
         })
     }
+  }])
+.service('userService',['$resource',function($resource){
+
   }])
