@@ -7,11 +7,11 @@
     </div>
     <div class="container">
       <div class="col-sm-4">
-        <h2>爱餐盒&nbsp;|&nbsp;订单信息</h2>
+        <h2><a style="color: white" href="#/">饭盒儿</a>&nbsp;|&nbsp;订单信息</h2>
         <br>
       </div>
       <div class="col-sm-8 text-center">
-        <div class="col-sm-3"  style="color: yellow;">
+        <div class="col-sm-3" style="color: yellow;">
           <div>
           <h3>1</h3>
           <h4>选择商品</h4>
@@ -46,7 +46,7 @@
             <span style="color: darkgray">商品</span>
           </div>
           <div class="col-sm-4 text-center">
-            <span style="color: darkgray">数量</span>
+            <span style="color: darkgray">数量（件）</span>
           </div>
           <div class="col-sm-3"  style="padding-left: 0;">
             <span style="color: darkgray">小计(￥)</span>
@@ -68,6 +68,7 @@
         <hr>
         <div class="col-sm-12 text-right">
           <span style="font-size: 30px;color: red">{{price|currency:'￥'}}</span>
+          <p>共计{{orderDetail.length}}件商品</p>
         </div>
 
       </div>
@@ -112,13 +113,13 @@
               <h5>配送方式</h5>
             </div>
             <div class="col-sm-10">
-              <h5>本订单由爱餐盒官网送货上门并提供售后服务。</h5>
+              <h5>本订单由饭盒儿官网送货上门并提供售后服务。</h5>
             </div>
             <div class="col-sm-2">
               <h5>送达时间</h5>
             </div>
             <div class="col-sm-10">
-              <h5> 次日达,如果需要加急请联系服务电话，我们会争取当日送达。</h5>
+              <h5> 默认次日达,如果需要加急请联系服务电话。</h5>
             </div>
           </div>
         </div>

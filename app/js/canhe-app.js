@@ -14,10 +14,6 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
   }])
   .config(['$routeProvider',function($routeProvider){
     $routeProvider
-      .when('/',{
-        templateUrl:'templates/home.html',
-        controller:'homeCtrl'
-      })
       .when('/list',{
         templateUrl:'templates/list.html',
         controller:'listCtrl'
@@ -47,12 +43,12 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
         templates:'templates/reg.html'
       })
       .otherwise({
-        redirectTo:'/'
+        redirectTo:'/list'
       })
   }])
 .controller('myCtrl',['$rootScope','$scope','$location','dataService',function($rootScope,$scope,$location,dataService){
     $scope.title='login';
-    $scope.barName='home';
+    $scope.barName='list';
     $scope.list_data=dataService.data;
     dataService.res('jiames');
     $scope.$watchCollection('list_data',function(newVal){

@@ -1,9 +1,109 @@
 <div class="container">
   <div class="panel panel-default remove-radius panel-success">
-    <div class="panel-body">
-      产品分类
+    <div class="panel-body product-classify">
+      <div class="row">
+        <div class="col-sm-1">
+          <span style="color: darkgray;">产品分类</span>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list"
+             class="btn btn-block btn-sm classify-btn"
+             ng-click="filterColor(0)"
+             ng-class="{true:'classify-btn-active'}[colorClassity===0]">全部</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-click="filterColor(1)"
+             ng-class="{true:'classify-btn-active'}[colorClassity===1]">透明餐盒</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-click="filterColor(2)"
+             ng-class="{true:'classify-btn-active'}[colorClassity===2]">有色餐盒</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-click="filterColor(3)"
+             ng-class="{true:'classify-btn-active'}[colorClassity===3]">筷子</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-click="filterColor(4)"
+             ng-class="{true:'classify-btn-active'}[colorClassity===4]">勺子</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-click="filterColor(5)"
+             ng-class="{true:'classify-btn-active'}[colorClassity===5]">打包袋</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-click="filterColor(6)"
+             ng-class="{true:'classify-btn-active'}[colorClassity===6]">餐巾纸</a>
+        </div>
+      </div>
+      <div class="row" ng-show="colorClassity<=2">
+        <div class="col-sm-1">
+          <span style="color: darkgray;">结构分类</span>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[struClasity===0]"
+             ng-click="filterStru(0)">全部</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[struClasity===1]"
+             ng-click="filterStru(1)">一格</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[struClasity===2]"
+             ng-click="filterStru(2)">二格</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[struClasity===3]"
+             ng-click="filterStru(3)">三格</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[struClasity===4]"
+             ng-click="filterStru(4)">四格</a>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[struClasity===5]"
+             ng-click="filterStru(5)">>=五格</a>
+        </div>
+      </div>
+      <div class="row" ng-show="colorClassity<=2">
+        <div class="col-sm-1">
+          <span style="color: darkgray;">容量分类</span>
+        </div>
+        <div class="col-sm-1">
+          <a href="#/list" class="btn btn-block btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[contentClassity===0]"
+             ng-click="filterContent(0)">全部</a>
+        </div>
+        <div class="col-sm-2">
+          <a href="#/list" class="btn btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[contentClassity===400]"
+             ng-click="filterContent(400)">少于700ml</a>
+        </div>
+        <div class="col-sm-2">
+          <a href="#/list" class="btn btn-sm classify-btn"
+             ng-class="{true:'classify-btn-active'}[contentClassity===600]"
+             ng-click="filterContent(600)">多于700ml</a>
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
+
 
   <div class="panel panel-default remove-radius panel-success">
     <div class="panel-heading">

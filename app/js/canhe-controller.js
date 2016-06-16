@@ -1,7 +1,7 @@
 angular.module('canhe.controllers', ['ngNumberPicker'])
   .controller('homeCtrl', ['$rootScope','$scope', '$location', function ($rootScope,$scope, $location) {
     $scope.myInterval = 3000;
-    $scope.myImg = 'img/logo.png';
+    $scope.myImg = 'img/test0.jpg';
     $scope.clickPic=function(obj){
       console.log(obj);
     }
@@ -10,7 +10,30 @@ angular.module('canhe.controllers', ['ngNumberPicker'])
     })
   }])
   .controller('listCtrl', ['$scope', '$location', function ($scope, $location) {
-    $scope.myImg = 'img/logo.png';
+    $scope.myImg = 'img/test1.jpg';
+    $scope.colorClassity=0;//餐盒的颜色
+    $scope.struClasity=0;//餐盒的结构
+    $scope.contentClassity=0;//餐盒的容量
+    $scope.filterColor=function(val){
+      if($scope.colorClassity===val){
+        return;
+      }
+      $scope.colorClassity=val;
+    }
+
+    $scope.filterStru=function(val){
+      if($scope.struClasity===val){
+        return;
+      }
+      $scope.struClasity=val;
+    }
+
+    $scope.filterContent=function(val){
+      if($scope.contentClassity===val){
+        return;
+      }
+      $scope.contentClassity=val;
+    }
   }])
 
   .controller('orderCtrl',['$scope',function($scope){

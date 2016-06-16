@@ -43,6 +43,36 @@ a.mouse-on:hover{
     background-color:gainsboro;
 }
 
+.product-classify .row{
+    margin-top: 10px;
+}
+.product-classify .col-sm-1{
+    padding-right: 0;
+}
+
+.classify-btn{
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.classify-btn-active{
+    background-color: #0089dc;
+    color: white;
+}
+
+
+.classify-btn:hover{
+    background-color: #0089dc;
+    color: white;
+}
+
+.classify-btn:focus{
+    color: white;
+}
+
 .prodict{
     height: 118px;
     cursor: pointer;

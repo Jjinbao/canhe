@@ -12,25 +12,7 @@
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "morgan": "~1.6.1",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+	"mysql":"latest"
   }
 }
-
-Cannot complete the install because of a conflicting dependency.
-  Software being installed: Android Development Tools 24.0.2.1647631 (com.android.ide.eclipse.adt.feature.feature.group 24.0.2.1647631)
-  Software currently installed: Android Developer Tools 22.2.1.v201309180102-833290 (com.android.ide.eclipse.adt.package.product 22.2.1.v201309180102-833290)
-  Only one of the following can be installed at once: 
-    ADT XML Overlay 24.0.2.1647631 (overlay.com.android.ide.eclipse.adt.overlay 24.0.2.1647631)
-    ADT XML Overlay 22.2.1.v201309180102-833290 (overlay.com.android.ide.eclipse.adt.overlay 22.2.1.v201309180102-833290)
-  Cannot satisfy dependency:
-    From: Android Development Tools 24.0.2.1647631 (com.android.ide.eclipse.adt.feature.feature.group 24.0.2.1647631)
-    To: overlay.com.android.ide.eclipse.adt.overlay [24.0.2.1647631]
-  Cannot satisfy dependency:
-    From: Android Development Tools 22.2.1.v201309180102-833290 (com.android.ide.eclipse.adt.feature.group 22.2.1.v201309180102-833290)
-    To: overlay.com.android.ide.eclipse.adt.overlay [22.2.1.v201309180102-833290]
-  Cannot satisfy dependency:
-    From: ADT Package 22.2.1.v201309180102-833290 (com.android.ide.eclipse.adt.package.feature.group 22.2.1.v201309180102-833290)
-    To: com.android.ide.eclipse.adt.feature.group 22.2.0
-  Cannot satisfy dependency:
-    From: Android Developer Tools 22.2.1.v201309180102-833290 (com.android.ide.eclipse.adt.package.product 22.2.1.v201309180102-833290)
-    To: com.android.ide.eclipse.adt.package.feature.group [22.2.1.v201309180102-833290]
