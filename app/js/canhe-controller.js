@@ -98,3 +98,16 @@ angular.module('canhe.controllers', ['ngNumberPicker'])
     }
 
   }])
+  .controller('aboutUs',['$scope','$http',function($scope,$http){
+    $http({
+      url:'http://127.0.0.1:3000/test',
+      methods:'GET'
+    }).success(function(data,header,config,status){
+      console.log(data);
+      console.log(header);
+      console.log(config);
+      console.log(status);
+    }).error(function(data,header,config,status){
+
+    })
+  }])

@@ -31,7 +31,8 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
         controller:'orderCtrl'
       })
       .when('/about',{
-        templateUrl:'templates/about.html'
+        templateUrl:'templates/about.html',
+        controller:'aboutUs'
       })
       .when('/custom',{
         templateUrl:'templates/custom.html'
@@ -52,7 +53,7 @@ angular.module('myApp',['ngRoute','canhe.service','canhe.controllers','canhe.dir
     $scope.list_data=dataService.data;
     dataService.res('jiames');
     $scope.$watchCollection('list_data',function(newVal){
-      console.log(newVal);
+
     });
     $scope.detailProdect = function () {
       $scope.barName='';

@@ -1,4 +1,4 @@
-angular.module('acount',['ngRoute'])
+angular.module('acount',['ngRoute','canhe.service'])
   .config(['$routeProvider',function($routeProvider){
     $routeProvider
       .when('/login',{
@@ -16,7 +16,7 @@ angular.module('acount',['ngRoute'])
   .controller('userCtrl',['$scope',function($scope){
 
   }])
-  .controller('loginCtrl',['$rootScope','$scope','$interval',function($rootScope,$scope,$interval){
+  .controller('loginCtrl',['$rootScope','$scope','$interval','dataService',function($rootScope,$scope,$interval,dataService){
     $rootScope.title='登录';
     $scope.proving='获取验证码';
     $scope.user={
@@ -25,8 +25,14 @@ angular.module('acount',['ngRoute'])
       yanzheng:''
     };
     $scope.submitLogin=function(valid){
+      //console.log('start login');
+      console.log(valid);
       if(valid){
-
+        console.log($scope.user);
+        dataService.login($scope.user);
+        //console.log($scope.user.name);
+        //console.log($scope.user.password);
+        //console.log($scope.user.yanzheng);
       }
     }
 

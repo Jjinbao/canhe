@@ -7,7 +7,8 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var getUsers=require('./dbfile.js');
+var mysql=require('mysql');
 var app = express();
 
 // view engine setup
@@ -57,10 +58,42 @@ app.use(function(err, req, res, next) {
 });*/
 
 app.get('/',function(req,res){
-  //res.send('hello nodejs');
+  res.send('hello nodejs');
   //res.end();
   res.sendfile('app/index.html');
+});
+
+app.get('/test',function(req,res){
+  var connection=mysql.createConnection(
+    {
+      host:'localhost',
+      user:'root',
+      password:'fanher570916',
+      database:'fanhe'
+    }
+  );
+  connection.connect();
+  connection.query('select * from t1 where name = "jack"',function(err,rows,filed){
+    if(err){
+      throw err;
+    }else{
+      res.writeHead(200,{"Content-Type":"text/html"});
+      res.end(rows);
+      console.log(rows);
+    }
+  });
+  connection.end();
+
+  //}
 })
+
+//app.get('/reg',routes.login);
+
+//app.post('/reg',function(reg,res){});
+app.get('/reg',routes.reg);
+app.post('/reg',routes.doReg);
+app.get('/login',routes.login);
+app.post('/login',routes.doLogin);
 
 app.listen(3000);
 module.exports = app;

@@ -8,6 +8,9 @@ angular.module('canhe.service',['ngResource'])
         return request_show_data(uuid);
       },
       cart:{},
+      login:function(obj){
+        return request_login(obj);
+      }
 
     }
 
@@ -17,6 +20,15 @@ angular.module('canhe.service',['ngResource'])
           if (value && value.uuid) {
             angular.copy(value,data);
           }
+        })
+    }
+
+    function request_login(obj){
+      return $resource('http://127.0.0.1:3000/login',{})
+        .save(null,obj,function(value){
+          //console.log(value);
+        },function(error){
+          //console.log(error);
         })
     }
   }])
